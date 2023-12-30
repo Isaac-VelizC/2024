@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024</title>
+    <link rel="stylesheet" href="./page2.css">
+</head>
+<body>
+    <div class="bg"></div>
+    <main class="new-year-body">
+        <h1 class="new-year">Feliz Año Nuevo <span id="usernameDisplay"></span></h1>
+        <p class="year">2024</p>
+        <button class="btn">Click Aqui!</button>
+    </main>
+    <script  src="./page2.js"></script>
+    <script>
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+        var usernameFromURL = getParameterByName('username');
+        var usernameDisplay = document.getElementById('usernameDisplay');
+        if (usernameDisplay) {
+            usernameDisplay.textContent = usernameFromURL;
+        }
+    </script>
+</body>
+</html>
