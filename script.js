@@ -219,7 +219,8 @@ function loop() {
 	ctx.globalCompositeOperation = 'lighter';
 	var username = usernameInput.value;
     var text = "Bienvenid@, querid@ amig@, " + username + ". Estoy emocionado de tenerte aquí!!";
-  ctx.font = "25px sans-serif";
+	var fontSize = 2; // Ajusta este valor según tus preferencias
+  ctx.font = fontSize + 'vw sans-serif';
   var textData = ctx.measureText(text);
   ctx.fillStyle = "rgba("+parseInt(random(0,255))+","+parseInt(random(0,255))+","+parseInt(random(0,255))+",0.3)";
   ctx.fillText(text,cw /2-textData.width/2,ch/2); 
